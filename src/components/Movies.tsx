@@ -3,7 +3,7 @@ import { getMovies } from "../utils"
 
 
 export const Movies = () => {
-  const [search, setSearch] = useState<string>('');
+  const [search, setSearch] = useState<string>('spiderman');
   const [movies, setMovies] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -52,7 +52,7 @@ export const Movies = () => {
           {movies.Title}
         </div>
       </div>
-      {movies.Search.map((movie:any) => (
+      {search && movies.Search.map((movie:any) => (
         <div>
           <img src={movie.Poster}></img>
           {movie.Title}
