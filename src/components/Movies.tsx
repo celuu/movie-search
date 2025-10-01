@@ -5,7 +5,6 @@ import { getMovies } from "../utils"
 export const Movies = () => {
   const [search, setSearch] = useState<string>('spiderman');
   const [movies, setMovies] = useState<any>();
-  const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
     if (!search) {
@@ -31,10 +30,8 @@ export const Movies = () => {
     e.preventDefault();
     if (!search) return;
 
-    setLoading(true);
     const data = await getMovies(search);
     setMovies(data);
-    setLoading(false);
   };
 
 
